@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\carcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +17,3 @@ Route::get('/dashboard', function () {
     return view('backsite.dashboard');
 });
 
-Route::post('/store-car', [CarController::class, 'store'])->name('store.car');

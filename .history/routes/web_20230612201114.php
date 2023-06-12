@@ -18,4 +18,4 @@ Route::get('/dashboard', function () {
     return view('backsite.dashboard');
 });
 
-Route::post('/store-car', [CarController::class, 'store'])->name('store.car');
+Route::post('/store-car', [carcontroller::class, 'store'])->name('store.car');

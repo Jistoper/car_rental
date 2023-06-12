@@ -50,11 +50,6 @@
 
   <main id="main" class="main">
 
-    <form method="POST" action="{{ route('store.car') }}">
-      @csrf
-      <button type="submit">Store Car</button>
-    </form>
-    
     <div class="pagetitle">
       <h1>Dashboard</h1>
       <nav>
