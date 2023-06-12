@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class CarController extends Controller
 {
-    public function getall()
+    public function getall(Request $request)
     {
         // Route::get('/api/cars', function () {
         //     $response = file_get_contents('http://localhost:8080/api/cars');

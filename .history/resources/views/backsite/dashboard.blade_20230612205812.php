@@ -45,20 +45,17 @@
   <!-- ======= Sidebar ======= -->
   @include('backsite.partials.sidebar')
 
-  <main id="main" class="main">
-    <!-- ======= Content ======= -->
-    {{-- @yield('content') --}}
+  <!-- ======= Content ======= -->
+  @include('backsite.content.table')
 
-    
-    <form method="POST" action="{{ route('getall.car') }}">
+  @yield('content')
+
+  <main id="main" class="main">
+
+    <form method="POST" action="{{ route('store.car') }}">
       @csrf
-      <button type="submit" id="showTableButton">
-          Get All Car
-      </button>
-  </form>
-  <div id="tableContainer" style="display: none;">
-      @include('backsite.content.table')
-  </div>  
+      <button type="submit">Store Car</button>
+    </form>
 
     <div class="pagetitle">
       <h1>Dashboard</h1>
@@ -723,16 +720,6 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-      $(document).ready(function() {
-          $("#showTableButton").click(function(e) {
-              e.preventDefault();
-              $("#tableContainer").toggle();
-          });
-      });
-  </script>
-
   <script src="assets/apexcharts/apexcharts.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/chart.js/chart.umd.js"></script>

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class CarController extends Controller
 {
-    public function getall()
+    public function getall(Request $request)
     {
         // Route::get('/api/cars', function () {
         //     $response = file_get_contents('http://localhost:8080/api/cars');
@@ -21,7 +21,9 @@ class CarController extends Controller
         //     return View::make('cars.show', ['car' => $data['cars']]);
         // });
 
-        $response = Http::get('http://localhost:8080/api/cars');
+        $response = Http::withHeaders([
+            "Content-Type" => "application/json",
+        ])->get('http://localhost:8080/api/cars');
 
         $cars = json_decode($response, true);
 

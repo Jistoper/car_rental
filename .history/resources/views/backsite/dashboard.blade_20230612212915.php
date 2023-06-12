@@ -55,10 +55,12 @@
       <button type="submit" id="showTableButton">
           Get All Car
       </button>
-  </form>
-  <div id="tableContainer" style="display: none;">
-      @include('backsite.content.table')
-  </div>  
+    </form>
+    <div id="tableContainer" style="display: none;">
+      @isset($data)
+          @include('backsite.content.table')
+      @endisset
+    </div>
 
     <div class="pagetitle">
       <h1>Dashboard</h1>
