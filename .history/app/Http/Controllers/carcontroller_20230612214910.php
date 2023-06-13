@@ -4,12 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\View;
-
 
 class CarController extends Controller
 {
-    public function getall(Request $request)
+    public function getall()
     {
         // Route::get('/api/cars', function () {
         //     $response = file_get_contents('http://localhost:8080/api/cars');
@@ -23,15 +21,11 @@ class CarController extends Controller
         //     return View::make('cars.show', ['car' => $data['cars']]);
         // });
 
-      #  $response = Http::withHeaders([
-     #       "Authorization" => $token,
-        #    "Content-Type" => "application/json",
-       # ])->get('http://localhost:8080/api/cars');
-
         $response = Http::get('http://localhost:8080/api/cars');
+
         $cars = json_decode($response, true);
-        return View('backsite.content.cartable', ['cars' => $cars['cars']]);
-        #return view('backsite.content.cartable', ['cars' => $cars ?? []]);
+
+        return view('car_data', ['cars' => $cars ?? []]);
         // return View::make('backsite.content.table', ['cars' => $data['cars']]);
     }
 

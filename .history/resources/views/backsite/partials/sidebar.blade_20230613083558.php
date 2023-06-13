@@ -8,7 +8,7 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="{{ route('getall.car') }}">
+            <a href="{{ cars.get }}">
               <i class="bi bi-circle"></i><span>Cars</span>
             </a>
           </li>

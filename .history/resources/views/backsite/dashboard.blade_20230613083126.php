@@ -47,15 +47,18 @@
 
   <main id="main" class="main">
     <!-- ======= Content ======= -->
-    @yield('content')
+    {{-- @yield('content') --}}
 
     
-    <form method="POST" action="{{ route('create.car') }}">
+    <form method="POST" action="{{ route('getall.car') }}">
       @csrf
       <button type="submit" id="showTableButton">
           Get All Car
       </button>
     </form>
+    <div id="tableContainer" style="display: none;">
+        @include('backsite.content.table')
+    </div>
 
     {{-- <div class="pagetitle">
       <h1>Dashboard</h1>

@@ -18,5 +18,5 @@ Route::get('/dashboard', function () {
     return view('backsite.dashboard');
 });
 
-Route::post('/create-car', [CarController::class, 'create'])->name('create.car');
-Route::get('/car', [CarController::class, 'getall'])->name('getall.car');
+Route::post('/store-car', [CarController::class, 'create'])->name('create.car');
+Route::post('/getall-car', [CarController::class, 'getall'])->name('getall.car');

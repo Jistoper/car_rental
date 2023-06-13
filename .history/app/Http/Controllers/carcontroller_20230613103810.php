@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\View;
 
 
 class CarController extends Controller
@@ -30,7 +29,7 @@ class CarController extends Controller
 
         $response = Http::get('http://localhost:8080/api/cars');
         $cars = json_decode($response, true);
-        return View('backsite.content.cartable', ['cars' => $cars['cars']]);
+        return View::make('cars.index', ['cars' => $data['cars']]);
         #return view('backsite.content.cartable', ['cars' => $cars ?? []]);
         // return View::make('backsite.content.table', ['cars' => $data['cars']]);
     }

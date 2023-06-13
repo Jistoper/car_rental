@@ -30,7 +30,7 @@ class CarController extends Controller
 
         $response = Http::get('http://localhost:8080/api/cars');
         $cars = json_decode($response, true);
-        return View('backsite.content.cartable', ['cars' => $cars['cars']]);
+        return View::make('backsite.content.cartable', ['cars' => $cars['cars']]);
         #return view('backsite.content.cartable', ['cars' => $cars ?? []]);
         // return View::make('backsite.content.table', ['cars' => $data['cars']]);
     }

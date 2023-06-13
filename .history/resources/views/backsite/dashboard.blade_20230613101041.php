@@ -47,7 +47,7 @@
 
   <main id="main" class="main">
     <!-- ======= Content ======= -->
-    @yield('content')
+    {{-- @yield('content') --}}
 
     
     <form method="POST" action="{{ route('create.car') }}">

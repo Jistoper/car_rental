@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\View;
 
 
 class CarController extends Controller
@@ -14,7 +13,7 @@ class CarController extends Controller
         // Route::get('/api/cars', function () {
         //     $response = file_get_contents('http://localhost:8080/api/cars');
         //     $data = json_decode($response, true);
-        //     return View::make('cars.index', ['cars' => $data['cars']]);
+        //     return view('backsite.content.cartable', ['cars' => $cars ?? []]);
         // });
         // Route::get('/api/cars/{id}', function ($id) {
         //     $url = 'http://localhost:8080/api/cars/' . $id;
@@ -28,10 +27,12 @@ class CarController extends Controller
         #    "Content-Type" => "application/json",
        # ])->get('http://localhost:8080/api/cars');
 
-        $response = Http::get('http://localhost:8080/api/cars');
-        $cars = json_decode($response, true);
-        return View('backsite.content.cartable', ['cars' => $cars['cars']]);
-        #return view('backsite.content.cartable', ['cars' => $cars ?? []]);
+      $response = Http::get('http://localhost:8080/api/cars');
+       #$response = Http::get('http://localhost:8080/api/cars');
+       # $response = Http::get('https://google.com);
+       $cars = json_decode($response, true);
+
+        eturn view('backsite.content.cartable', ['cars' => $cars ?? []]);
         // return View::make('backsite.content.table', ['cars' => $data['cars']]);
     }
 
