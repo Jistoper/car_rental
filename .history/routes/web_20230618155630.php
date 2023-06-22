@@ -16,7 +16,7 @@ use App\Http\Controllers\carcontroller;
 
 Route::get('/dashboard', function () {
     return view('backsite.dashboard');
-})->name('dashboard');
+});
 
 Route::controller(CarController::class)->as('car.')->group(function(){
     Route::get('/car', 'getall')->name('getall');

@@ -50,12 +50,12 @@
     @yield('content')
 
     
-    {{-- <form method="POST" action="{{ route('car.create') }}">
+    <form method="POST" action="{{ route('car.create') }}">
       @csrf
       <button type="submit" id="showTableButton">
           Get All Car
       </button>
-    </form> --}}
+    </form>
 
     {{-- <div class="pagetitle">
       <h1>Dashboard</h1>

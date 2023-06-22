@@ -9,12 +9,12 @@ use Illuminate\Support\Facades\View;
 
 class CarController extends Controller
 {
-    public function getall()
+    public function getall(Request $request)
     {
         $response = Http::get('http://localhost:8080/api/cars');
         $cars = json_decode($response, true);
 
-        return view('backsite.content.car.cartable', ['Cars' => $cars['Cars']]);
+        return View('backsite.content.car.cartable', ['cars' => dd($cars)]);
     }
 
     public function getbyid()

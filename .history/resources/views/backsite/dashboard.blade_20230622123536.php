@@ -722,6 +722,18 @@
           });
       });
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var link = document.getElementById('myLink');
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+
+            // Update the class of the link
+            link.classList.add('new-class');
+            link.classList.remove('original-class');
+        });
+    });
+  </script>
 
   <script src="assets/apexcharts/apexcharts.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>

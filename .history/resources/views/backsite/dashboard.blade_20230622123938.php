@@ -722,6 +722,26 @@
           });
       });
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var sidebarLinks = document.getElementsByClassName('sidebar-link');
+        for (var i = 0; i < sidebarLinks.length; i++) {
+            sidebarLinks[i].addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default link behavior
+
+                // Update the class of the clicked link
+                this.classList.add('active');
+                // Remove the 'active' class from other links
+                for (var j = 0; j < sidebarLinks.length; j++) {
+                    if (sidebarLinks[j] !== this) {
+                        sidebarLinks[j].classList.remove('active');
+                    }
+                }
+            });
+        }
+    });
+  </script>
+
 
   <script src="assets/apexcharts/apexcharts.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>

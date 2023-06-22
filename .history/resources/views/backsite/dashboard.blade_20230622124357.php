@@ -722,6 +722,34 @@
           });
       });
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var sidebarLinks = document.getElementsByClassName('sidebar-link');
+
+        // Function to handle the click event on menu items
+        var handleClick = function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+
+            // Toggle the classes for the clicked link
+            this.classList.toggle('nav-link');
+            this.classList.toggle('nav-link-collapsed');
+
+            // Remove the classes from other links
+            for (var i = 0; i < sidebarLinks.length; i++) {
+                if (sidebarLinks[i] !== this) {
+                    sidebarLinks[i].classList.remove('nav-link');
+                    sidebarLinks[i].classList.add('nav-link-collapsed');
+                }
+            }
+        };
+
+        // Attach the click event listener to each menu item
+        for (var i = 0; i < sidebarLinks.length; i++) {
+            sidebarLinks[i].addEventListener('click', handleClick);
+        }
+    });
+  </script>
+
 
   <script src="assets/apexcharts/apexcharts.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>

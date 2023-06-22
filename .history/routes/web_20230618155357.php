@@ -16,9 +16,11 @@ use App\Http\Controllers\carcontroller;
 
 Route::get('/dashboard', function () {
     return view('backsite.dashboard');
-})->name('dashboard');
+});
 
 Route::controller(CarController::class)->as('car.')->group(function(){
     Route::get('/car', 'getall')->name('getall');
     Route::post('/create', 'create')->name('create');
 });
+Route::post('/create-car', [CarController::class, 'create'])->name('create.car');
+Route::get('/car', [CarController::class, 'getall'])->name('getall.car');

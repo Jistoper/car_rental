@@ -6,12 +6,11 @@
     <table class="table datatable">
         <thead>
           <tr>
-            <th scope="col">#</th>
             <th scope="col">ID</th>
             <th scope="col">Brand</th>
             <th scope="col">Model</th>
             <th scope="col">Year</th>
-            <th scope="col">Resgistration Number</th>
+            <th scope="col">Registration Number</th>
             <th scope="col">VIN</th>
             <th scope="col">Engine Number</th>
             <th scope="col">Color</th>
