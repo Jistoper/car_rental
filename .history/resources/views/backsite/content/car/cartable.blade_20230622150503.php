@@ -34,24 +34,11 @@
                     <td>{{ $cars['color'] }}</td>
                     <td>{{ $cars['is_available'] ? 'Yes' : 'No' }}</td>
                     <td>
-                        <form action="{{ route('car.edit', $cars['car_id']) }}" class="d-inline" method="POST">
-                            @csrf
-                            @method('GET')
-                            <input type="hidden" name="car_id" value="{{ $cars['car_id'] }}">
-                            <input type="hidden" name="brand" value="{{ $cars['brand'] }}">
-                            <input type="hidden" name="model" value="{{ $cars['model'] }}">
-                            <input type="hidden" name="year" value="{{ $cars['year'] }}">
-                            <input type="hidden" name="registration_number" value="{{ $cars['registration_number'] }}">
-                            <input type="hidden" name="vin" value="{{ $cars['vin'] }}">
-                            <input type="hidden" name="engine_number" value="{{ $cars['engine_number'] }}">
-                            <input type="hidden" name="color" value="{{ $cars['color'] }}">
-                            <button class="btn btn-sm rounded-pill btn-outline-secondary" type="submit" name='submit'>Edit</button>
-                        </form>
-                        <form onsubmit="return confirm('Are you sure you want to delete this data?')" action="{{ route('car.delete') }}" class="d-inline" method="POST">
+                        <a href="{{ route('car.edit', $cars['car_id']) }}" class="btn btn-sm btn-secondary">Edit</a>
+                        <form onsubmit="return confirm('Are you sure want to delete this data?')" action="{{ route('experience.destroy', $item->id) }}" class="d-inline" method="POST">
                             @csrf
                             @method('DELETE')
-                            <input type="hidden" name="car_id" value="{{ $cars['car_id'] }}">
-                            <button class="btn btn-sm rounded-pill btn-outline-danger" type="submit" name='submit'>Delete</button>
+                            <button class="btn btn-sm btn-danger" type="submit" name='submit'>Delete</button>
                         </form>
                     </td>
                 </tr>

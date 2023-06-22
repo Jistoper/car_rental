@@ -3,11 +3,6 @@
 @section('content')
 
 <div>
-    <div>
-        <h3 class="mb-3">
-            Add New Car
-        </h3>
-    </div>
     <form action="{{ route('car.store') }}" method="POST" class="row g-3">
         @csrf
         <div class="col-md-3">

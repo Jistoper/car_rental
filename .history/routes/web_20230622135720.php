@@ -21,8 +21,5 @@ Route::get('/dashboard', function () {
 Route::controller(CarController::class)->as('car.')->group(function(){
     Route::get('/car', 'getall')->name('getall');
     Route::get('/create', 'create')->name('create');
-    Route::post('/create', 'storeCar')->name('store');
-    Route::get('/edit', 'edit')->name('edit');
-    Route::post('/edit', 'storeEdit')->name('storeEdit');
-    Route::delete('/', 'delete')->name('delete');
+    Route::post('/create', 'store')->name('store')
 });

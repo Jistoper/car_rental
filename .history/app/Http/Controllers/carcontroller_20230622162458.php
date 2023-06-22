@@ -47,7 +47,7 @@ class CarController extends Controller
             "Content-Type" => "application/json",
         ])->post('http://localhost:8080/api/cars', $data);
 
-        return redirect()->route('car.getall');
+        return redirect()->route('dashboard');
     }
 
     public function edit(Request $request)
@@ -68,8 +68,6 @@ class CarController extends Controller
 
     public function storeEdit(Request $request)
     {
-        $car_id = $request->input('car_id');
-
         $data = [
             "brand" => $request->brand,
             "model" => $request->model,
@@ -86,9 +84,9 @@ class CarController extends Controller
         $response = Http::withHeaders([
             "Authorization" => "Bearer " . $token,
             "Content-Type" => "application/json",
-        ])->put('http://localhost:8080/api/cars/' . $car_id, $data);
+        ])->post('http://localhost:8080/api/cars', $data);
 
-        return redirect()->route('car.getall');
+        return redirect()->route('dashboard');
     }
 
     public function update()

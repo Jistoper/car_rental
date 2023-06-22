@@ -47,17 +47,47 @@
                             <input type="hidden" name="color" value="{{ $cars['color'] }}">
                             <button class="btn btn-sm rounded-pill btn-outline-secondary" type="submit" name='submit'>Edit</button>
                         </form>
-                        <form onsubmit="return confirm('Are you sure you want to delete this data?')" action="{{ route('car.delete') }}" class="d-inline" method="POST">
+                        {{-- <a href="{{ route('car.edit', $cars['car_id']) }}" class="btn btn-sm rounded-pill btn-outline-secondary">Edit</a> --}}
+                        <form action="{{ route('car.delete') }}" class="d-inline" method="POST" id="deleteForm-{{ $cars['car_id'] }}">
                             @csrf
                             @method('DELETE')
                             <input type="hidden" name="car_id" value="{{ $cars['car_id'] }}">
-                            <button class="btn btn-sm rounded-pill btn-outline-danger" type="submit" name='submit'>Delete</button>
-                        </form>
+                            <button name="submit" type="button" class="btn btn-sm rounded-pill btn-outline-danger" data-bs-toggle="modal" data-bs-target="#basicModal-{{ $cars['car_id'] }}">
+                                Delete
+                            </button>
+                            <div class="modal fade" id="basicModal-{{ $cars['car_id'] }}" tabindex="-1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Delete Confirmation</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete this data?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-outline-danger" id="confirmDelete-{{ $cars['car_id'] }}">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>                        
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 </div>
+
+@foreach($Cars as $cars)
+<script>
+    document.getElementById('confirmDelete-{{ $cars['car_id'] }}').addEventListener('click', function() {
+        if (confirm('Are you sure you want to delete this data?')) {
+            document.getElementById('deleteForm-{{ $cars['car_id'] }}').submit();
+        }
+    });
+</script>
+@endforeach
 
 @endsection

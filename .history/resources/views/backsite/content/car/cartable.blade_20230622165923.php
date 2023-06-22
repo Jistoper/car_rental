@@ -47,6 +47,7 @@
                             <input type="hidden" name="color" value="{{ $cars['color'] }}">
                             <button class="btn btn-sm rounded-pill btn-outline-secondary" type="submit" name='submit'>Edit</button>
                         </form>
+                        {{-- <a href="{{ route('car.edit', $cars['car_id']) }}" class="btn btn-sm rounded-pill btn-outline-secondary">Edit</a> --}}
                         <form onsubmit="return confirm('Are you sure you want to delete this data?')" action="{{ route('car.delete') }}" class="d-inline" method="POST">
                             @csrf
                             @method('DELETE')

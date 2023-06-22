@@ -8,6 +8,7 @@
   <title>Dashboard</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  @vite('resources/css/app.css')
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">

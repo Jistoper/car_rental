@@ -68,7 +68,7 @@ class CarController extends Controller
 
     public function storeEdit(Request $request)
     {
-        $car_id = $request->input('car_id');
+        $car_id = $request->car_id;
 
         $data = [
             "brand" => $request->brand,
@@ -86,7 +86,7 @@ class CarController extends Controller
         $response = Http::withHeaders([
             "Authorization" => "Bearer " . $token,
             "Content-Type" => "application/json",
-        ])->put('http://localhost:8080/api/cars/' . $car_id, $data);
+        ])->put('http://localhost:8080/api/cars' . $car_id, $data);
 
         return redirect()->route('car.getall');
     }

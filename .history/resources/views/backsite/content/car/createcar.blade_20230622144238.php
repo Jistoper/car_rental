@@ -3,13 +3,7 @@
 @section('content')
 
 <div>
-    <div>
-        <h3 class="mb-3">
-            Add New Car
-        </h3>
-    </div>
-    <form action="{{ route('car.store') }}" method="POST" class="row g-3">
-        @csrf
+    <form class="row g-3">
         <div class="col-md-3">
             <div class="form-floating">
                 <input type="text" name="brand" id="brand" class="form-control @error('brand') border-red-500 @enderror" value="{{ old('brand') }}" placeholder="Brand">
@@ -62,6 +56,58 @@
             </button>
         </div>
       </form><!-- End floating Labels Form -->
+    <form action="{{ route('car.store') }}" method="POST" class="mb-4">
+        @csrf
+        <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Brand</label>
+            <div class="col-sm-4">
+                
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Model</label>
+            <div class="col-sm-4">
+                
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Year</label>
+            <div class="col-sm-4">
+                
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Registration Number</label>
+            <div class="col-sm-4">
+                
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">VIN</label>
+            <div class="col-sm-4">
+                
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Engine Number</label>
+            <div class="col-sm-4">
+                
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Color</label>
+            <div class="col-sm-4">
+                
+            </div>
+        </div>
+        <div class="flex items-center justify-end">
+            <button class="flex items-center space-x-1 bg-slate-800 hover:bg-slate-700 text-white font-semibold py-2 px-4 rounded" onclick="getContent()" type="submit">
+                <span>
+                    Comment
+                </span>
+            </button>
+        </div>
+    </form>
 </div>
 
 @endsection

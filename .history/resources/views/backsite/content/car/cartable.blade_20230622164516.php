@@ -47,11 +47,31 @@
                             <input type="hidden" name="color" value="{{ $cars['color'] }}">
                             <button class="btn btn-sm rounded-pill btn-outline-secondary" type="submit" name='submit'>Edit</button>
                         </form>
+                        {{-- <a href="{{ route('car.edit', $cars['car_id']) }}" class="btn btn-sm rounded-pill btn-outline-secondary">Edit</a> --}}
                         <form onsubmit="return confirm('Are you sure you want to delete this data?')" action="{{ route('car.delete') }}" class="d-inline" method="POST">
                             @csrf
                             @method('DELETE')
                             <input type="hidden" name="car_id" value="{{ $cars['car_id'] }}">
-                            <button class="btn btn-sm rounded-pill btn-outline-danger" type="submit" name='submit'>Delete</button>
+                            <button name="submit" type="submit" class="btn btn-sm rounded-pill btn-outline-danger" data-bs-toggle="modal" data-bs-target="#basicModal">
+                                Delete
+                            </button>
+                            <div class="modal fade" id="basicModal" tabindex="-1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Basic Modal</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete this data?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-outline-danger">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </form>
                     </td>
                 </tr>
