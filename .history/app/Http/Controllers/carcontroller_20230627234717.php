@@ -75,7 +75,7 @@ class CarController extends Controller
             "model" => $request->model,
             "type" => $request->type,
             "capacity" => $request->capacity,
-            "year" => intVal($request->year),
+            "year" => $request->year,
             "registration_number" => $request->registration_number,
             "vin" => $request->vin,
             "engine_number" => $request->engine_number,

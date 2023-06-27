@@ -27,10 +27,10 @@
                     <td>{{ $cars['car_id'] }}</td>
                     <td>{{ $cars['brand'] }}</td>
                     <td>{{ $cars['model'] }}</td>
-                    <td>{{ $cars['type'] }}</td>
-                    <td>{{ $cars['capacity'] }}</td>
                     <td>{{ $cars['year'] }}</td>
                     <td>{{ $cars['registration_number'] }}</td>
+                    <td>{{ $cars['vin'] }}</td>
+                    <td>{{ $cars['engine_number'] }}</td>
                     <td>{{ $cars['color'] }}</td>
                     <td>{{ $cars['is_available'] ? 'Yes' : 'No' }}</td>
                     <td>

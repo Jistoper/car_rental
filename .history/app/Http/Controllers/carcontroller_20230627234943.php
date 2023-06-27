@@ -83,6 +83,8 @@ class CarController extends Controller
             "is_available" => true
         ];
 
+        $token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODkxNjgwMjMsInN1YiI6InRlc3QxMiJ9.-ezLSqJzIuUbum_p1NXeInNHkG953SP_4fMdbOgrlUo"; // Replace with your actual auth token
+
         $response = Http::put('http://localhost:8080/api/cars/' . $car_id, $data);
 
         return redirect()->route('car.getall');

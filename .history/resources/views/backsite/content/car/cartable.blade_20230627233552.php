@@ -3,8 +3,16 @@
 @section('content')
 
 <div>
+    <div class="pagetitle row">
+        <div class="col">
+            <h3>Cars</h3>
+        </div>
+        <div class="col-md-2">
+            <a href="{{ route('car.create') }}" class="btn btn-outline-primary rounded-pill bi-plus-lg"> Add Car</a>
+        </div>
+    </div>
     <div class="mb-3">
-        <h3>Maintenance Registry</h3>
+        
     </div>
     <table class="table datatable">
         <thead>
@@ -27,21 +35,31 @@
                     <td>{{ $cars['car_id'] }}</td>
                     <td>{{ $cars['brand'] }}</td>
                     <td>{{ $cars['model'] }}</td>
-                    <td>{{ $cars['type'] }}</td>
-                    <td>{{ $cars['capacity'] }}</td>
                     <td>{{ $cars['year'] }}</td>
                     <td>{{ $cars['registration_number'] }}</td>
+                    <td>{{ $cars['vin'] }}</td>
+                    <td>{{ $cars['engine_number'] }}</td>
                     <td>{{ $cars['color'] }}</td>
                     <td>{{ $cars['is_available'] ? 'Yes' : 'No' }}</td>
                     <td>
-                        <form action="{{ route('car.createMtn', $cars['car_id']) }}" class="d-inline" method="POST">
+                        <form action="{{ route('car.edit', $cars['car_id']) }}" class="d-inline" method="POST">
                             @csrf
                             @method('GET')
                             <input type="hidden" name="car_id" value="{{ $cars['car_id'] }}">
                             <input type="hidden" name="brand" value="{{ $cars['brand'] }}">
                             <input type="hidden" name="model" value="{{ $cars['model'] }}">
+                            <input type="hidden" name="year" value="{{ $cars['year'] }}">
                             <input type="hidden" name="registration_number" value="{{ $cars['registration_number'] }}">
-                            <button class="btn btn-sm rounded-pill btn-outline-primary bi-wrench" type="submit" name='submit'></button>
+                            <input type="hidden" name="vin" value="{{ $cars['vin'] }}">
+                            <input type="hidden" name="engine_number" value="{{ $cars['engine_number'] }}">
+                            <input type="hidden" name="color" value="{{ $cars['color'] }}">
+                            <button class="btn btn-sm rounded-pill btn-outline-secondary bi-pencil" type="submit" name='submit'></button>
+                        </form>
+                        <form onsubmit="return confirm('Are you sure you want to delete this data?')" action="{{ route('car.delete', $cars['car_id']) }}" class="d-inline" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <input type="hidden" name="car_id" value="{{ $cars['car_id'] }}">
+                            <button class="btn btn-sm rounded-pill btn-outline-danger bi-x-circle" type="submit" name='submit'></button>
                         </form>
                     </td>
                 </tr>

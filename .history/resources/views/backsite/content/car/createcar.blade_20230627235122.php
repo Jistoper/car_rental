@@ -31,17 +31,17 @@
         </div>
         <div class="col-md-3">
             <div class="form-floating">
+              <input type="text" name="model" id="model" class="form-control @error('model') border-red-500 @enderror" value="{{ old('model') }}" placeholder="Model">
+              <label for="model">Model</label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-floating">
                 <input type="text" name="color" id="color" class="form-control @error('color') border-red-500 @enderror" value="{{ old('color') }}" placeholder="Color">
                 <label for="color">Color</label>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="form-floating">
-              <input type="text" name="capacity" id="capacity" class="form-control @error('capacity') border-red-500 @enderror" value="{{ old('capacity') }}" placeholder="Capacity">
-              <label for="capacity">Capacity</label>
-            </div>
-        </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
             <div class="form-floating">
                 <input type="text" name="year" id="year" class="form-control @error('year') border-red-500 @enderror" value="{{ old('year') }}" placeholder="Year">
                 <label for="year">Year</label>

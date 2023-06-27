@@ -73,9 +73,7 @@ class CarController extends Controller
         $data = [
             "brand" => $request->brand,
             "model" => $request->model,
-            "type" => $request->type,
-            "capacity" => $request->capacity,
-            "year" => intVal($request->year),
+            "year" => intval($request->year),
             "registration_number" => $request->registration_number,
             "vin" => $request->vin,
             "engine_number" => $request->engine_number,
@@ -83,7 +81,12 @@ class CarController extends Controller
             "is_available" => true
         ];
 
-        $response = Http::put('http://localhost:8080/api/cars/' . $car_id, $data);
+        $token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODkxNjgwMjMsInN1YiI6InRlc3QxMiJ9.-ezLSqJzIuUbum_p1NXeInNHkG953SP_4fMdbOgrlUo"; // Replace with your actual auth token
+
+        $response = Http::withHeaders([
+            "Authorization" => "Bearer " . $token,
+            "Content-Type" => "application/json",
+        ])->put('http://localhost:8080/api/cars/' . $car_id, $data);
 
         return redirect()->route('car.getall');
     }

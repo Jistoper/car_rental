@@ -36,13 +36,13 @@
                 <label for="color">Color</label>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
             <div class="form-floating">
                 <input type="text" name="capacity" id="capacity" class="form-control @error('capacity') border-red-500 @enderror" value="{{ $data['capacity'] }}" placeholder="Capacity">
                 <label for="capacity">Capacity</label>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
             <div class="form-floating">
                 <input type="text" name="year" id="year" class="form-control @error('year') border-red-500 @enderror" value="{{ $data['year'] }}" placeholder="Year">
                 <label for="year">Year</label>
