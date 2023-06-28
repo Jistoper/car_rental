@@ -137,19 +137,23 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="{{ route('car.rentEdit', $rent['rental_id']) }}" class="d-inline" method="POST">
+                        <form action="{{ route('car.mtnEdit', $rent['rental_id']) }}" class="d-inline" method="POST">
                             @csrf
                             @method('GET')
+                            <td>{{ $rent['rental_id'] }}</td>
+                        <td>{{ $rent['car_id'] }}</td>
+                        <td>{{ $rent['nik'] }}</td>
+                        <td>{{ $rent['usage_region'] }}</td>
+                        <td>{{ $rent['rental_date'] }}</td>
+                        <td>{{ $rent['return_date'] }}</td>
+                        <td>{{ $rent['is_completed'] ? 'Yes' : 'No' }}</td>
                             <input type="hidden" name="rental_id" value="{{ $rent['rental_id'] }}">
                             <input type="hidden" name="user_id" value="{{ $rent['user_id'] }}">
                             <input type="hidden" name="car_id" value="{{ $rent['car_id'] }}">
-                            <input type="hidden" name="nik" value="{{ $rent['nik'] }}">
-                            <input type="hidden" name="name" value="{{ $rent['name'] }}">
                             <input type="hidden" name="usage_region" value="{{ $rent['usage_region'] }}">
                             <input type="hidden" name="rental_date" value="{{ $rent['rental_date'] }}">
                             <input type="hidden" name="return_date" value="{{ $rent['return_date'] }}">
                             <input type="hidden" name="total_price" value="{{ $rent['total_price'] }}">
-                            <input type="hidden" name="is_completed" value="{{ $rent['is_completed'] }}">
                             <input type="hidden" name="brand" value="{{ $Car[$rent['car_id']]['brand'] }}">
                             <input type="hidden" name="model" value="{{ $Car[$rent['car_id']]['model'] }}">
                             <input type="hidden" name="color" value="{{ $Car[$rent['car_id']]['color'] }}">

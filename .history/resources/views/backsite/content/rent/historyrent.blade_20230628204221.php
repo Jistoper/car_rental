@@ -137,14 +137,12 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="{{ route('car.rentEdit', $rent['rental_id']) }}" class="d-inline" method="POST">
+                        <form action="{{ route('car.mtnEdit', $rent['rental_id']) }}" class="d-inline" method="POST">
                             @csrf
                             @method('GET')
                             <input type="hidden" name="rental_id" value="{{ $rent['rental_id'] }}">
                             <input type="hidden" name="user_id" value="{{ $rent['user_id'] }}">
                             <input type="hidden" name="car_id" value="{{ $rent['car_id'] }}">
-                            <input type="hidden" name="nik" value="{{ $rent['nik'] }}">
-                            <input type="hidden" name="name" value="{{ $rent['name'] }}">
                             <input type="hidden" name="usage_region" value="{{ $rent['usage_region'] }}">
                             <input type="hidden" name="rental_date" value="{{ $rent['rental_date'] }}">
                             <input type="hidden" name="return_date" value="{{ $rent['return_date'] }}">

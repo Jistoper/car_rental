@@ -160,15 +160,13 @@ class CarController extends Controller
             'Car' => $carData,
         ]);
     }
-
+    
     public function rentEditView(Request $request)
     {
         $data = [
             "rental_id" => $request->rental_id,
             "user_id" => $request->user_id,
             "car_id" => $request->car_id,
-            "nik" => $request->nik,
-            "name" => $request->name,
             "usage_region" => $request->usage_region,
             "rental_date" => $request->rental_date,
             "return_date" => $request->return_date,
@@ -180,7 +178,7 @@ class CarController extends Controller
             "color" => $request->color,
         ];
 
-        return view('backsite.content.rent.editrent')->with('data', $data);
+        return view('backsite.content.rent.createrent')->with('data', $data);
     }
     
     // End Rent Data

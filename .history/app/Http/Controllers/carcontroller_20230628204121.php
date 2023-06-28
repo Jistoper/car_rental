@@ -161,26 +161,33 @@ class CarController extends Controller
         ]);
     }
 
+    <input type="hidden" name="rental_id" value="{{ $rent['rental_id'] }}">
+                            <input type="hidden" name="user_id" value="{{ $rent['user_id'] }}">
+                            <input type="hidden" name="car_id" value="{{ $rent['car_id'] }}">
+                            <input type="hidden" name="usage_region" value="{{ $rent['usage_region'] }}">
+                            <input type="hidden" name="rental_date" value="{{ $rent['rental_date'] }}">
+                            <input type="hidden" name="return_date" value="{{ $rent['return_date'] }}">
+                            <input type="hidden" name="total_price" value="{{ $rent['total_price'] }}">
+                            <input type="hidden" name="total_price" value="{{ $rent['is_completed'] }}">
+                            <input type="hidden" name="brand" value="{{ $Car[$rent['car_id']]['brand'] }}">
+                            <input type="hidden" name="model" value="{{ $Car[$rent['car_id']]['model'] }}">
+                            <input type="hidden" name="color" value="{{ $Car[$rent['car_id']]['color'] }}">
+                            <input type="hidden" name="registration_number" value="{{ $Car[$rent['car_id']]['registration_number'] }}">
     public function rentEditView(Request $request)
     {
         $data = [
             "rental_id" => $request->rental_id,
             "user_id" => $request->user_id,
             "car_id" => $request->car_id,
-            "nik" => $request->nik,
-            "name" => $request->name,
             "usage_region" => $request->usage_region,
             "rental_date" => $request->rental_date,
-            "return_date" => $request->return_date,
-            "total_price" => $request->total_price,
-            "is_completed" => $request->is_completed,
             "brand" => $request->brand,
             "model" => $request->model,
             "registration_number" => $request->registration_number,
             "color" => $request->color,
         ];
 
-        return view('backsite.content.rent.editrent')->with('data', $data);
+        return view('backsite.content.rent.createrent')->with('data', $data);
     }
     
     // End Rent Data
