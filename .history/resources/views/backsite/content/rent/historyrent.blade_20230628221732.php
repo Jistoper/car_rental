@@ -29,14 +29,12 @@
                     <td>{{ $rent['rental_date'] }}</td>
                     <td>{{ $rent['return_date'] }}</td>
                     <td>{{ $rent['is_completed'] ? 'Yes' : 'No' }}
-                        @if (!$rent['is_completed'])
-                            <form action="{{ route('car.cnRentStat', $rent['rental_id']) }}" class="d-inline" method="POST">
-                                @csrf
-                                @method('POST')
-                                <input type="hidden" name="rental_id" value="{{ $rent['rental_id'] }}">
-                                <button class="btn btn-sm rounded-pill btn-outline-success bi-check2" type="submit" name='submit'></button>
-                            </form>
-                        @endif
+                        <form onsubmit="return confirm('Are you sure you want to delete this data?')" action="{{ route('car.cnRentStat', $rent['rental_id']) }}" class="d-inline" method="POST">
+                            @csrf
+                            @method('POST')
+                            <input type="hidden" name="rental_id" value="{{ $rent['rental_id'] }}">
+                            <button class="btn btn-sm rounded-pill btn-outline-success bi-check" type="submit" name='submit'></button>
+                        </form>
                     </td>
                     <td>
                         <button name="submit" type="button" class="btn btn-sm btn-outline-info rounded-pill bi-eye" data-bs-toggle="modal" data-bs-target="#basicModal{{ $rent['rental_id'] }}">
@@ -165,7 +163,7 @@
                             <input type="hidden" name="registration_number" value="{{ $Car[$rent['car_id']]['registration_number'] }}">
                             <button class="btn btn-sm rounded-pill btn-outline-secondary bi-pencil" type="submit" name='submit'></button>
                         </form>
-                        <form onsubmit="return confirm('Are you sure you want to delete this data?')" action="{{ route('car.rentDelete', $rent['rental_id']) }}" class="d-inline" method="POST">
+                        <form onsubmit="return confirm('Are you sure you want to delete this data?')" action="{{ route('car.delete', $rent['rental_id']) }}" class="d-inline" method="POST">
                             @csrf
                             @method('DELETE')
                             <input type="hidden" name="rental_id" value="{{ $rent['rental_id'] }}">

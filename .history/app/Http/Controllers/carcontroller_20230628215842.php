@@ -161,19 +161,6 @@ class CarController extends Controller
         ]);
     }
 
-    public function cnRentStat(Request $request)
-    {
-        $rental_id = $request->input('rental_id');
-
-        $data = [
-            "is_completed" => true,
-        ];
-
-        $response = Http::put('http://localhost:8080/api/rentals/' . $rental_id, $data);
-
-        return redirect()->route('car.getListRent');
-    }
-
     public function rentEditView(Request $request)
     {
         $data = [
@@ -213,22 +200,11 @@ class CarController extends Controller
             "is_completed" => $is_completed,
         ];
 
-        $response = Http::put('http://localhost:8080/api/rentals/' . $rental_id, $data);
+        dd($data);
+
+        // $response = Http::put('http://localhost:8080/api/rentals/' . $rental_id, $data);
 
         return redirect()->route('car.getListRent');
-    }
-
-    public function rentDelete(Request $request)
-    {
-        $rental_id = $request->input('rental_id');
-
-        $data = [
-            "id" => $rental_id,
-        ];
-
-        $response = Http::delete('http://localhost:8080/api/rentals', $data);
-
-        return redirect()->back();
     }
     // End Rent Data
 

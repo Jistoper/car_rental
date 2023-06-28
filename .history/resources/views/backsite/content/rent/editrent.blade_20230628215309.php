@@ -95,7 +95,7 @@
                 </span>
             </button>
         </div>
-    </form><!-- End floating Labels Form -->
+      </form><!-- End floating Labels Form -->
 </div>
 
 @endsection

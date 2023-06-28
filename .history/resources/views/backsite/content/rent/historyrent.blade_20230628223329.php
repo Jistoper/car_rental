@@ -49,7 +49,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>
+                                        <div>
                                             <b>
                                                 Rental ID :
                                             </b>
@@ -103,16 +103,16 @@
                                         {{-- end car data --}}
 
                                         {{-- start rent detail --}}
-                                        <p>
+                                        <div>
                                             <h4>
                                                 RENTAL DETAIL
                                             </h4>
-                                            <p>
+                                            <div>
                                                 <b>
                                                     - Usage Region :
                                                 </b>
                                                 {{ $rent['usage_region'] }}
-                                            </p>
+                                            </div>
                                             <p>
                                                 <b>
                                                     - Rent Fee :
@@ -137,7 +137,7 @@
                                                 </b>
                                                 {{ $rent['is_completed'] ? 'Yes' : 'No' }}
                                             </p>
-                                        </p>
+                                        </div>
                                         {{-- end rent detail --}}
                                     </div>
                                     <div class="modal-footer">

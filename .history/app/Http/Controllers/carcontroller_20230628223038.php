@@ -223,12 +223,12 @@ class CarController extends Controller
         $rental_id = $request->input('rental_id');
 
         $data = [
-            "id" => $rental_id,
+            "id" => $car_id,
         ];
 
         $response = Http::delete('http://localhost:8080/api/rentals', $data);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Car data deleted successfully.');
     }
     // End Rent Data
 

@@ -49,37 +49,29 @@
                 <label for="name">Nama</label>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="form-floating">
                 <input type="date" name="rental_date" id="rental_date" class="form-control" placeholder="Rent Date" value="{{ $data['rental_date'] }}">
                 <label for="rental_date">Rent Date</label>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="form-floating">
                 <input type="date" name="return_date" id="return_date" class="form-control" placeholder="Return Date" value="{{ $data['return_date'] }}">
                 <label for="return_date">Return Date</label>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="form-floating mb-3">
                 <select class="form-select" id="usage_region" name="usage_region" aria-label="usage_region">
-                    <option value="Sukun" {{ $data['usage_region'] === 'Sukun' ? 'selected' : '' }}>Sukun</option>
-                    <option value="Lowokwaru" {{ $data['usage_region'] === 'Lowokwaru' ? 'selected' : '' }}>Lowokwaru</option>
-                    <option value="Klojen" {{ $data['usage_region'] === 'Klojen' ? 'selected' : '' }}>Klojen</option>
-                    <option value="Kedungkandang" {{ $data['usage_region'] === 'Kedungkandang' ? 'selected' : '' }}>Kedungkandang</option>
-                    <option value="Blimbing" {{ $data['usage_region'] === 'Blimbing' ? 'selected' : '' }}>Blimbing</option>
+                    <option selected>{{ $data['usage_region'] }}</option>
+                    <option value="Sukun">Sukun</option>
+                    <option value="Lowokwaru">Lowokwaru</option>
+                    <option value="Klojen">Klojen</option>
+                    <option value="Kedungkandang">Kedungkandang</option>
+                    <option value="Blimbing">Blimbing</option>
                 </select>
                 <label for="usage_region">Usage Region</label>
-            </div>
-        </div>                
-        <div class="col-md-3">
-            <div class="form-floating mb-3">
-                <select class="form-select" id="is_completed" name="is_completed" aria-label="is_completed">
-                    <option value=1 {{ $data['is_completed'] ? 'selected' : '' }}>Yes</option>
-                    <option value=0 {{ !$data['is_completed'] ? 'selected' : '' }}>No</option>
-                </select>
-                <label for="is_completed">Complete Status</label>
             </div>
         </div>
         <div class="col-md-12">
@@ -95,7 +87,7 @@
                 </span>
             </button>
         </div>
-    </form><!-- End floating Labels Form -->
+      </form><!-- End floating Labels Form -->
 </div>
 
 @endsection

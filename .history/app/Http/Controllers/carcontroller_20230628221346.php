@@ -217,19 +217,6 @@ class CarController extends Controller
 
         return redirect()->route('car.getListRent');
     }
-
-    public function rentDelete(Request $request)
-    {
-        $rental_id = $request->input('rental_id');
-
-        $data = [
-            "id" => $rental_id,
-        ];
-
-        $response = Http::delete('http://localhost:8080/api/rentals', $data);
-
-        return redirect()->back();
-    }
     // End Rent Data
 
     // Start Maintenance Data

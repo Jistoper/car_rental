@@ -44,7 +44,7 @@
                                 <input type="hidden" name="registration_number" value="{{ $cars['registration_number'] }}">
                                 <input type="hidden" name="color" value="{{ $cars['color'] }}">
                                 <button class="btn btn-sm rounded-pill btn-outline-primary bi-handbag-fill" type="submit" name='submit'></button>
-                            </form>
+                        </form>
                         @endif
                     </td>
                 </tr>

@@ -165,7 +165,7 @@
                             <input type="hidden" name="registration_number" value="{{ $Car[$rent['car_id']]['registration_number'] }}">
                             <button class="btn btn-sm rounded-pill btn-outline-secondary bi-pencil" type="submit" name='submit'></button>
                         </form>
-                        <form onsubmit="return confirm('Are you sure you want to delete this data?')" action="{{ route('car.rentDelete', $rent['rental_id']) }}" class="d-inline" method="POST">
+                        <form onsubmit="return confirm('Are you sure you want to delete this data?')" action="{{ route('car.delete', $rent['rental_id']) }}" class="d-inline" method="POST">
                             @csrf
                             @method('DELETE')
                             <input type="hidden" name="rental_id" value="{{ $rent['rental_id'] }}">

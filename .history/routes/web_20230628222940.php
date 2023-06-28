@@ -33,7 +33,7 @@ Route::controller(CarController::class)->as('car.')->group(function(){
     Route::post('/rent-change', 'cnRentStat')->name('cnRentStat'); // rental check status
     Route::get('/rent-edit', 'rentEditView')->name('rentEdit'); // rental edit (view form)
     Route::post('/rent-edit-store', 'rentEditStore')->name('rentStoreEdit'); // rental edit (view form)
-    Route::delete('/rent-delete', 'rentDelete')->name('rentDelete'); // rental edit (view form)
+    Route::delete('/rent-delete', 'rentEditStore')->name('rentStoreEdit'); // rental edit (view form)
 
     Route::get('/maintenance-registry', 'getCarMtn')->name('getCarMtn'); // maintenance index
     Route::get('/maintenance-history', 'getListMtn')->name('getListMtn'); // maintenance index

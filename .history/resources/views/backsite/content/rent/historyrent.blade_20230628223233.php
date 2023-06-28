@@ -107,12 +107,12 @@
                                             <h4>
                                                 RENTAL DETAIL
                                             </h4>
-                                            <p>
+                                            <div>
                                                 <b>
                                                     - Usage Region :
                                                 </b>
                                                 {{ $rent['usage_region'] }}
-                                            </p>
+                                            </div>
                                             <p>
                                                 <b>
                                                     - Rent Fee :

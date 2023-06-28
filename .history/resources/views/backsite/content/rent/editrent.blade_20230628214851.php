@@ -76,8 +76,8 @@
         <div class="col-md-3">
             <div class="form-floating mb-3">
                 <select class="form-select" id="is_completed" name="is_completed" aria-label="is_completed">
-                    <option value=1 {{ $data['is_completed'] ? 'selected' : '' }}>Yes</option>
-                    <option value=0 {{ !$data['is_completed'] ? 'selected' : '' }}>No</option>
+                    <option value="1" {{ $data['is_completed'] ? 'selected' : '' }}>Yes</option>
+                    <option value="0" {{ !$data['is_completed'] ? 'selected' : '' }}>No</option>
                 </select>
                 <label for="is_completed">Complete Status</label>
             </div>
@@ -95,7 +95,7 @@
                 </span>
             </button>
         </div>
-    </form><!-- End floating Labels Form -->
+      </form><!-- End floating Labels Form -->
 </div>
 
 @endsection
