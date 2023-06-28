@@ -146,25 +146,6 @@ class CarController extends Controller
 
         return redirect()->route('car.getListCar');
     }
-
-    public function getListRent()
-    {
-        $response = Http::get('http://localhost:8080/api/rentals');
-
-        $rent = json_decode($response->getBody(), true);
-        $rentalHistory = $rent['Rental'];
-        $carData = [];
-
-        foreach ($rentalHistory as $rental) {
-            $car = $rental['Car'];
-            $carData[$car['car_id']] = $car;
-        }
-
-        return view('backsite.content.rent.historyrent', [
-            'Rent' => $rentalHistory,
-            'Car' => $carData,
-        ]);
-    }
     // End Rent Data
 
     // Start Maintenance Data

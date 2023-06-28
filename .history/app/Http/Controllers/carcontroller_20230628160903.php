@@ -146,25 +146,6 @@ class CarController extends Controller
 
         return redirect()->route('car.getListCar');
     }
-
-    public function getListRent()
-    {
-        $response = Http::get('http://localhost:8080/api/rentals');
-
-        $rent = json_decode($response->getBody(), true);
-        $rentalHistory = $rent['Rental'];
-        $carData = [];
-
-        foreach ($rentalHistory as $rental) {
-            $car = $rental['Car'];
-            $carData[$car['car_id']] = $car;
-        }
-
-        return view('backsite.content.rent.historyrent', [
-            'Rent' => $rentalHistory,
-            'Car' => $carData,
-        ]);
-    }
     // End Rent Data
 
     // Start Maintenance Data
@@ -216,7 +197,12 @@ class CarController extends Controller
             "expense" => intVal($request->expense),
         ];
 
-        $response = Http::post('http://localhost:8080/api/maintenance', $data);
+        $token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODkxNjgwMjMsInN1YiI6InRlc3QxMiJ9.-ezLSqJzIuUbum_p1NXeInNHkG953SP_4fMdbOgrlUo"; // Replace with your actual auth token
+
+        $response = Http::withHeaders([
+            "Authorization" => "Bearer " . $token,
+            "Content-Type" => "application/json",
+        ])->post('http://localhost:8080/api/maintenance', $data);
 
         return redirect()->route('car.getCarMtn');
     }

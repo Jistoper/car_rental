@@ -62,7 +62,7 @@
         </div>
         <div class="col-md-4">
             <div class="form-floating mb-3">
-                <select class="form-select" id="usage_region" name="usage_region" aria-label="usage_region">
+                <select class="form-select" id="usage_region" aria-label="usage_region">
                     <option selected></option>
                     <option value="Sukun">Sukun</option>
                     <option value="Lowokwaru">Lowokwaru</option>

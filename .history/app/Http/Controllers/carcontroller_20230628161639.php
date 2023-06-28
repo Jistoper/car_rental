@@ -160,7 +160,7 @@ class CarController extends Controller
             $carData[$car['car_id']] = $car;
         }
 
-        return view('backsite.content.rent.historyrent', [
+        return view('backsite.content.maintenance.historymtn', [
             'Rent' => $rentalHistory,
             'Car' => $carData,
         ]);

@@ -26,7 +26,7 @@
             </a>
           </li>
           <li>
-            <a class="nav-link collapsed" href="{{ route('car.getListRent') }}">
+            <a class="nav-link collapsed" href="#">
               <i class="bi bi-collection"></i><span>History</span>
             </a>
           </li>
