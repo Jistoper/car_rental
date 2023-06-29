@@ -83,57 +83,57 @@
                     @csrf
                     <div class="col-md-3">
                         <div class="form-floating">
-                            <input type="text" name="brand" id="brand" class="form-control" placeholder="Brand" required>
+                            <input type="text" name="brand" id="brand" class="form-control" placeholder="Brand">
                             <label for="brand">Brand</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-floating">
-                            <input type="text" name="model" id="model" class="form-control" placeholder="Model" required>
+                            <input type="text" name="model" id="model" class="form-control" placeholder="Model">
                             <label for="model">Model</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-floating">
-                            <input type="text" name="type" id="type" class="form-control" placeholder="Type" required>
+                            <input type="text" name="type" id="type" class="form-control" placeholder="Type">
                             <label for="type">Type</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-floating">
-                            <input type="text" name="color" id="color" class="form-control" placeholder="Color" required>
+                            <input type="text" name="color" id="color" class="form-control" placeholder="Color">
                             <label for="color">Color</label>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input type="text" name="capacity" id="capacity" class="form-control" placeholder="Capacity" required>
+                            <input type="text" name="capacity" id="capacity" class="form-control" placeholder="Capacity">
                             <label for="capacity">Capacity</label>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input type="text" name="year" id="year" class="form-control" placeholder="Year" required>
+                            <input type="text" name="year" id="year" class="form-control" placeholder="Year">
                             <label for="year">Year</label>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input type="text" name="registration_number" id="registration_number" class="form-control" placeholder="Registration Number" required>
+                            <input type="text" name="registration_number" id="registration_number" class="form-control" placeholder="Registration Number">
                             <label for="registration_number">Registration Number</label>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="col-md-12">
                             <div class="form-floating">
-                                <input type="text" name="vin" id="vin" class="form-control" placeholder="VIN" required>
+                                <input type="text" name="vin" id="vin" class="form-control" placeholder="VIN">
                             <label for="vin">VIN</label>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-floating">
-                            <input type="text" name="engine_number" id="engine_number" class="form-control" placeholder="Engine Number" required>
+                            <input type="text" name="engine_number" id="engine_number" class="form-control" placeholder="Engine Number">
                             <label for="engine_number">Engine Number</label>
                         </div>
                     </div>

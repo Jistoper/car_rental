@@ -79,61 +79,62 @@
                 <h5 class="modal-title">Add Car</h5>
             </div>
             <div class="modal-body">
-                <form action="{{ route('car.store') }}" method="POST" class="row g-3 needs-validation" novalidate>
+                <form action="{{ route('car.storeEdit') }}" method="POST" class="row g-3 needs-validation" novalidate>
                     @csrf
+                    <input type="hidden" name="car_id" id="car_id" value="{{ $cars['car_id'] }}">
                     <div class="col-md-3">
                         <div class="form-floating">
-                            <input type="text" name="brand" id="brand" class="form-control" placeholder="Brand" required>
+                            <input type="text" name="brand" id="brand" class="form-control" value="{{ $cars['brand'] }}" placeholder="Brand" required>
                             <label for="brand">Brand</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-floating">
-                            <input type="text" name="model" id="model" class="form-control" placeholder="Model" required>
+                            <input type="text" name="model" id="model" class="form-control" value="{{ $cars['model'] }}" placeholder="Model" required>
                             <label for="model">Model</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-floating">
-                            <input type="text" name="type" id="type" class="form-control" placeholder="Type" required>
+                            <input type="text" name="type" id="type" class="form-control" value="{{ $cars['type'] }}" placeholder="Type" required>
                             <label for="type">Type</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-floating">
-                            <input type="text" name="color" id="color" class="form-control" placeholder="Color" required>
+                            <input type="text" name="color" id="color" class="form-control" value="{{ $cars['color'] }}" placeholder="Color" required>
                             <label for="color">Color</label>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input type="text" name="capacity" id="capacity" class="form-control" placeholder="Capacity" required>
+                            <input type="text" name="capacity" id="capacity" class="form-control" value="{{ $cars['capacity'] }}" placeholder="Capacity" required>
                             <label for="capacity">Capacity</label>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input type="text" name="year" id="year" class="form-control" placeholder="Year" required>
+                            <input type="text" name="year" id="year" class="form-control" value="{{ $cars['year'] }}" placeholder="Year" required>
                             <label for="year">Year</label>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input type="text" name="registration_number" id="registration_number" class="form-control" placeholder="Registration Number" required>
-                            <label for="registration_number">Registration Number</label>
+                                <input type="text" name="registration_number" id="registration_number" class="form-control" value="{{ $cars['registration_number'] }}" placeholder="Registration Number" required>
+                                <label for="registration_number">Registration Number</label>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="col-md-12">
                             <div class="form-floating">
-                                <input type="text" name="vin" id="vin" class="form-control" placeholder="VIN" required>
-                            <label for="vin">VIN</label>
+                                <input type="text" name="vin" id="vin" class="form-control" value="{{ $cars['vin'] }}" placeholder="VIN" required>
+                                <label for="vin">VIN</label>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-floating">
-                            <input type="text" name="engine_number" id="engine_number" class="form-control" placeholder="Engine Number" required>
+                            <input type="text" name="engine_number" id="engine_number" class="form-control" value="{{ $cars['engine_number'] }}" placeholder="Engine Number" required>
                             <label for="engine_number">Engine Number</label>
                         </div>
                     </div>
