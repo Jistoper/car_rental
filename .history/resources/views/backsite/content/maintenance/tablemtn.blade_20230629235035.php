@@ -34,7 +34,7 @@
                     <td>{{ $cars['color'] }}</td>
                     <td>{{ $cars['is_available'] ? 'Yes' : 'No' }}</td>
                     <td>
-                        <button type="button" class="btn btn-sm rounded-pill btn-outline-primary bi-wrench" data-bs-toggle="modal" data-bs-target="#AddMaintenance{{ $cars['car_id'] }}"></button>
+                        <button type="button" class="btn btn-sm rounded-pill btn-outline-secondary bi-pencil" data-bs-toggle="modal" data-bs-target="#AddMaintenance{{ $cars['car_id'] }}"></button>
                         {{-- <form action="{{ route('car.createMtn', $cars['car_id']) }}" class="d-inline" method="POST">
                             @csrf
                             @method('GET')
