@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Session;
 
 
 class CarController extends Controller
@@ -275,21 +274,21 @@ class CarController extends Controller
     public function storeMtn(Request $request)
     {
         $validatedData = $request->validate([
-            "car_id" => 'required',
-            "last_odometer" => 'required',
-            "type" => 'required',
-            "date" => 'required',
-            "description" => 'required',
-            "expense" => 'required',
+            "car_id" => 'required|string',
+            "last_odometer" => 'required|string',
+            "type" => 'required|string',
+            "date" => 'required|string',
+            "description" => 'required|string',
+            "expense" => 'required|string',
         ]);
 
         $data = [
-            "car_id" => intVal($validatedData['car_id']),
-            "last_odometer" => intVal($validatedData['last_odometer']),
-            "type" => $validatedData['type'],
-            "date" => $validatedData['date'],
-            "description" => $validatedData['description'],
-            "expense" => intVal($validatedData['expense']),
+            "car_id" => $request->car_id,
+            "last_odometer" => $request->last_odometer,
+            "type" => $request->type,
+            "date" => $request->date,
+            "description" => $request->description,
+            "expense" => intVal($request->expense),
         ];
 
         $response = Http::post('http://localhost:8080/api/maintenance', $data);

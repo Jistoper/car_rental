@@ -284,12 +284,12 @@ class CarController extends Controller
         ]);
 
         $data = [
-            "car_id" => intVal($validatedData['car_id']),
-            "last_odometer" => intVal($validatedData['last_odometer']),
-            "type" => $validatedData['type'],
-            "date" => $validatedData['date'],
-            "description" => $validatedData['description'],
-            "expense" => intVal($validatedData['expense']),
+            "car_id" => $request->car_id,
+            "last_odometer" => $request->last_odometer,
+            "type" => $request->type,
+            "date" => $request->date,
+            "description" => $request->description,
+            "expense" => intVal($request->expense),
         ];
 
         $response = Http::post('http://localhost:8080/api/maintenance', $data);

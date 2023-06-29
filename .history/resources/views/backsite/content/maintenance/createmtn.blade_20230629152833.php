@@ -9,7 +9,7 @@
         </div>
         <h3 class="col-md-4">Add New Maintenance Data</h3>
     </div>
-    <form action="{{ route('car.storeMtn') }}" method="POST" class="row g-3 needs-validation" novalidate>
+    <form action="{{ route('car.storeMtn') }}" method="POST" class="row g-3">
         @csrf
         <input type="hidden" name="car_id" id="car_id" value="{{ Session::has('car_id') ? Session::get('car_id') : $data['car_id'] }}">
         <input type="hidden" name="brand" id="brand" value="{{ Session::has('brand') ? Session::get('brand') : $data['brand'] }}">
@@ -43,7 +43,8 @@
             <div class="form-floating">
                 <input type="text" name="last_odometer" id="last_odometer" class="form-control" value="{{ Session::get('last_odometer') }}" placeholder="Last Odometer" required>
                 <label for="last_odometer">Last Odometer</label>
-                <div class="valid-feedback"></div>
+                <div class="valid-feedback">
+                </div>
                 <div class="invalid-feedback">
                     Please provide the last odometer data.
                 </div>
@@ -53,9 +54,11 @@
             <div class="form-floating">
                 <input type="text" name="type" id="type" class="form-control" value="{{ Session::get('type') }}" placeholder="Type" required>
                 <label for="type">Type</label>
-                <div class="valid-feedback"></div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
                 <div class="invalid-feedback">
-                    Please provide the type of maintenance.
+                    Please provide type of maintenance.
                 </div>
             </div>
         </div>
@@ -63,7 +66,9 @@
             <div class="form-floating">
                 <input type="Date" name="date" id="date" class="form-control" value="{{ Session::get('date') }}" placeholder="Date" required>
                 <label for="date">Date</label>
-                <div class="valid-feedback"></div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
                 <div class="invalid-feedback">
                     Please provide the maintenance date.
                 </div>
@@ -71,22 +76,24 @@
         </div>
         <div class="col-md-4">
             <div class="form-floating">
-                <input type="text" name="expense" id="expense" class="form-control" value="{{ Session::get('expense') }}" placeholder="Expense" required>
+                <input type="text" name="expense" id="expense" class="form-control @error('expense') border-red-500 @enderror" value="{{ Session::get('expense') }}" placeholder="Expense">
                 <label for="expense">Expense</label>
-                <div class="valid-feedback"></div>
-                <div class="invalid-feedback">
-                    Please provide the maintenance expense.
-                </div>
+                @error('expense')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
         </div>
         <div class="col-md-12">
             <div class="form-floating">
-                <textarea type="text" name="description" id="description" class="form-control" placeholder="Description" style="height: 150px;" required>{{ Session::get('description') }}</textarea>
+                <textarea type="text" name="description" id="description" class="form-control @error('description') border-red-500 @enderror" placeholder="Description" style="height: 150px;">{{ Session::get('description') }}</textarea>
                 <label for="description">Description</label>
-                <div class="valid-feedback"></div>
-                <div class="invalid-feedback">
-                    Please provide description.
-                </div>
+                @error('description')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
         </div>
         <div class="text-center mb-3">

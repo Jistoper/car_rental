@@ -274,6 +274,16 @@ class CarController extends Controller
 
     public function storeMtn(Request $request)
     {
+        Session::flash('car_id', $request->car_id);
+        Session::flash('brand', $request->brand);
+        Session::flash('model', $request->model);
+        Session::flash('registration_number', $request->registration_number);
+        Session::flash('last_odometer', $request->last_odometer);
+        Session::flash('type', $request->type);
+        Session::flash('date', $request->date);
+        Session::flash('description', $request->description);
+        Session::flash('expense', $request->expense);
+
         $validatedData = $request->validate([
             "car_id" => 'required',
             "last_odometer" => 'required',
@@ -284,12 +294,12 @@ class CarController extends Controller
         ]);
 
         $data = [
-            "car_id" => intVal($validatedData['car_id']),
-            "last_odometer" => intVal($validatedData['last_odometer']),
-            "type" => $validatedData['type'],
-            "date" => $validatedData['date'],
-            "description" => $validatedData['description'],
-            "expense" => intVal($validatedData['expense']),
+            "car_id" => $request->car_id,
+            "last_odometer" => $request->last_odometer,
+            "type" => $request->type,
+            "date" => $request->date,
+            "description" => $request->description,
+            "expense" => intVal($request->expense),
         ];
 
         $response = Http::post('http://localhost:8080/api/maintenance', $data);

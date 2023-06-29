@@ -71,7 +71,7 @@
         </div>
         <div class="col-md-4">
             <div class="form-floating">
-                <input type="text" name="expense" id="expense" class="form-control" value="{{ Session::get('expense') }}" placeholder="Expense" required>
+                <input type="text" name="expense" id="expense" class="form-control @error('expense') border-red-500 @enderror" value="{{ Session::get('expense') }}" placeholder="Expense">
                 <label for="expense">Expense</label>
                 <div class="valid-feedback"></div>
                 <div class="invalid-feedback">
@@ -81,7 +81,7 @@
         </div>
         <div class="col-md-12">
             <div class="form-floating">
-                <textarea type="text" name="description" id="description" class="form-control" placeholder="Description" style="height: 150px;" required>{{ Session::get('description') }}</textarea>
+                <textarea type="text" name="description" id="description" class="form-control @error('description') border-red-500 @enderror" placeholder="Description" style="height: 150px;">{{ Session::get('description') }}</textarea>
                 <label for="description">Description</label>
                 <div class="valid-feedback"></div>
                 <div class="invalid-feedback">
